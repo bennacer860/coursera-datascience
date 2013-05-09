@@ -35,8 +35,7 @@ def score_all_the_tweets(tweet_file,sentiment_dictionary):
 def main():
     sent_file = open(sys.argv[1])
     sentiment_dictionary=parseDictionnry(sent_file)
-    print "score tentative"
-    print score_tweet(sentiment_dictionary,"hello bad  bad")
+    # print "score tentative"
     tweet_file = open(sys.argv[2])
     score_all_the_tweets(tweet_file,sentiment_dictionary)
     # hw()
