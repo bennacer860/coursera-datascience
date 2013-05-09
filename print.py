@@ -6,3 +6,4 @@ results = json.load(response)["results"]
 
 for i in range(10):
     print results[i]["text"]
+    
