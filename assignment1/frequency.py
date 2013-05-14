@@ -2,37 +2,50 @@ import sys
 import json
 
 
-#for each token say how many times it has appeared in the file
-def count_word_frequency(tweet_file_name):
-	tweet_file = open(tweet_file_name)
-	total = count_all_words(tweet_file)
-	tweet_file.close
+
+def parseTweetFile(tweet_file):
+	tweet_file = open(tweet_file)
+	tweets = [ ]
+	for tweet in tweet_file.readlines():
+		tweet = json.loads(tweet)
+		# print tweet["text"].encode("utf-8")
+		try:
+			tweets.append(tweet["text"].encode("utf-8"))
+		except:
+		    print "Unexpected error:", sys.exc_info()[0]
+	tweet_file.close()	    
+	return tweets	    
+		
+
+
+def count_frequency(tweets):
+	word_count = {}
+	frequency = {}
+	total_number_of_terms = 0.0
+		
+	for tweet in tweets:
+		words = tweet.split()
+		for word in words:
+			#increment the total
+			total_number_of_terms += 1.0	
+			if word in word_count.keys():
+				word_count[word] += 1.0
+			else:
+				word_count[word] = 1.0	
 	
-	tweet_file = open(tweet_file_name)
-	word_frequency= {}
-	word_list = tweet_file.read().decode("utf8").split()
-	# print text
-	for w in word_list:
-		word_frequency[w] = word_frequency.get(w,0)+1.0
-	
-	keys = sorted(word_frequency.keys())
-	for word in keys:
-		print "%s %f" % (word, word_frequency[word]/total)
-	tweet_file.close
-
-#compute the frequency of each token
+	for key in word_count.keys():
+		frequency[key] = word_count[key] / total_number_of_terms 
+	return frequency
 
 
-def count_all_words(tweet_file):
-	word_list = tweet_file.read().encode("utf8").split()
-	# print word_list
-	return len(word_list)
+
 
 def main():
-	tweet_file_name = sys.argv[1]
-	count_word_frequency(tweet_file_name)
-
-
+	tweet_file = sys.argv[1]
+	tweets = parseTweetFile(tweet_file)
+	terms = count_frequency(tweets)
+	for key in terms:
+		print key,terms[key]
 
 if __name__ == '__main__':
     main()
