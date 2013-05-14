@@ -1,17 +1,19 @@
 import sys
 import json
-import re
 
 
 def parseDictionnry( sentiment_file ):
+	sentiment_file = open(sentiment_file)
 	afinnfile = sentiment_file.readlines()
 	scores = {} # initialize an empty dictionary
 	for line in afinnfile:
 		term, score  = line.split("\t")  # The file is tab-delimited. "\t" means "tab character"
 		scores[term] = score  # Convert the score to an integerself.
+	sentiment_file.close()	
    	return scores
 
 def parseTweetFile(tweet_file):
+	tweet_file = open(tweet_file)
 	tweets = [ ]
 	for tweet in tweet_file.readlines():
 		tweet = json.loads(tweet)
@@ -20,6 +22,7 @@ def parseTweetFile(tweet_file):
 			tweets.append(tweet["text"].encode("utf-8"))
 		except:
 		    print "Unexpected error:", sys.exc_info()[0]
+	tweet_file.close()	    
 	return tweets	    
 		
 
@@ -49,8 +52,8 @@ def score_all_the_terms(tweets,sentiment_dictionary):
 
 
 def main():
-	sent_file = open(sys.argv[1])
-	tweet_file = open(sys.argv[2])
+	sent_file = sys.argv[1]
+	tweet_file = sys.argv[2]
 	sentiment_dictionary=parseDictionnry(sent_file)
 	tweets = parseTweetFile(tweet_file)
 	terms = score_all_the_terms(tweets,sentiment_dictionary)
