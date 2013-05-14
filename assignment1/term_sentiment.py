@@ -1,5 +1,6 @@
 import sys
 import json
+import re
 
 
 def parseDictionnry( sentiment_file ):
@@ -10,38 +11,51 @@ def parseDictionnry( sentiment_file ):
 		scores[term] = score  # Convert the score to an integerself.
    	return scores
 
-def score_tweet ( scores,text ):
-	score = 0.0
-	newTerms = []
-	text = text.encode('utf-8')
-	words = text.split()
-	#go through each word in text and add the score to score
-	for word in words:
-		# print word
-		if word in scores:
-			score = score+int(scores[word])
-		else:
-			newTerms.append(word)
+def parseTweetFile(tweet_file):
+	tweets = [ ]
+	for tweet in tweet_file.readlines():
+		tweet = json.loads(tweet)
+		# print tweet["text"].encode("utf-8")
+		try:
+			tweets.append(tweet["text"].encode("utf-8"))
+		except:
+		    print "Unexpected error:", sys.exc_info()[0]
+	return tweets	    
+		
+
+
+def score_all_the_terms(tweets,sentiment_dictionary):
+	#store the words and their scores in a dict
+	word_scores = {}
+	#get the dictionary keys
+	keys = sentiment_dictionary.keys()
 	
-	for	term in newTerms:
-		print term+" "+str(score/len(words))		
+	for tweet in tweets:
+		score = 0.0
+		words = tweet.split()
+		num_of_words = len(words)
+		for word in words:
+			#if the word is in our sentiment dict
+			if word in keys:
+				score += float(sentiment_dictionary[word])
+
+		for word in words:
+			#if the word is not calculate a score for the new word =score of the tweet / the number of the words in that tweet		
+			if word not in keys:
+				word_scores[word] =  score/num_of_words
+	return word_scores
 
 
-
-def score_all_the_tweets(tweet_file,sentiment_dictionary):
-	tweet_file = tweet_file.readlines()
-	for tweet in tweet_file:
-		tweet=json.loads(tweet)
-		if "text" in tweet.keys():
-			print score_tweet(sentiment_dictionary,tweet["text"])
 
 
 def main():
-    sent_file = open(sys.argv[1])
-    tweet_file = open(sys.argv[2])
-    sentiment_dictionary=parseDictionnry(sent_file)
-    score_all_the_tweets(tweet_file,sentiment_dictionary)
-
+	sent_file = open(sys.argv[1])
+	tweet_file = open(sys.argv[2])
+	sentiment_dictionary=parseDictionnry(sent_file)
+	tweets = parseTweetFile(tweet_file)
+	terms = score_all_the_terms(tweets,sentiment_dictionary)
+	for key in terms:
+		print key,terms[key]
 
 if __name__ == '__main__':
     main()
