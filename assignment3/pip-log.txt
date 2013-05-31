@@ -1,0 +1,103 @@
+Downloading/unpacking mapreduce
+  Getting page http://pypi.python.org/simple/mapreduce
+  Could not fetch URL http://pypi.python.org/simple/mapreduce: HTTP Error 404: Not Found (mapreduce does not have any releases)
+  Will skip URL http://pypi.python.org/simple/mapreduce when looking for download links for mapreduce
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for mapreduce:
+  Could not find any downloads that satisfy the requirement mapreduce
+No distributions at all found for mapreduce
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1750, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1029, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for mapreduce
+------------------------------------------------------------
+/usr/bin/pip run on Fri May 24 11:29:58 2013
+Downloading/unpacking MapReduce
+  Getting page http://pypi.python.org/simple/MapReduce
+  Could not fetch URL http://pypi.python.org/simple/MapReduce: HTTP Error 404: Not Found (MapReduce does not have any releases)
+  Will skip URL http://pypi.python.org/simple/MapReduce when looking for download links for MapReduce
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for MapReduce:
+  Could not find any downloads that satisfy the requirement MapReduce
+No distributions at all found for MapReduce
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1750, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1029, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for MapReduce
+------------------------------------------------------------
+/usr/bin/pip run on Fri May 24 11:30:58 2013
+Downloading/unpacking MapReduce
+  Getting page http://pypi.python.org/simple/MapReduce
+  Could not fetch URL http://pypi.python.org/simple/MapReduce: HTTP Error 404: Not Found (MapReduce does not have any releases)
+  Will skip URL http://pypi.python.org/simple/MapReduce when looking for download links for MapReduce
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for MapReduce:
+  Could not find any downloads that satisfy the requirement MapReduce
+No distributions at all found for MapReduce
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1750, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1029, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for MapReduce
+------------------------------------------------------------
+/usr/bin/pip run on Fri May 24 11:31:15 2013
+Downloading/unpacking sys
+  Getting page http://pypi.python.org/simple/sys
+  Could not fetch URL http://pypi.python.org/simple/sys: HTTP Error 404: Not Found (sys does not have any releases)
+  Will skip URL http://pypi.python.org/simple/sys when looking for download links for sys
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for sys:
+  Could not find any downloads that satisfy the requirement sys
+No distributions at all found for sys
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1750, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1029, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for sys
+------------------------------------------------------------
+/usr/bin/pip run on Fri May 24 11:31:25 2013
+Downloading/unpacking MapReduce
+  Getting page http://pypi.python.org/simple/MapReduce
+  Could not fetch URL http://pypi.python.org/simple/MapReduce: HTTP Error 404: Not Found (MapReduce does not have any releases)
+  Will skip URL http://pypi.python.org/simple/MapReduce when looking for download links for MapReduce
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for MapReduce:
+  Could not find any downloads that satisfy the requirement MapReduce
+No distributions at all found for MapReduce
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1750, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1029, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for MapReduce
