@@ -15,18 +15,14 @@ def mapper(record):
     # value: friend
     key = record[0]
     value = record[1]
-    words = value.split()
-    for w in words:
-      mr.emit_intermediate(key,1)
+
+    mr.emit_intermediate((key,value),1)
+    mr.emit_intermediate((value,key),1)
       
 
 def reducer(key, list_of_values):
-    # key: word
-    # value: list of document id
-    total = 0
-    for v in list_of_values:
-	    total += v	
-    mr.emit((key, total))
+    if len(list_of_values) == 1 :
+      mr.emit(key)
 
 # Do not modify below this line
 # =============================
